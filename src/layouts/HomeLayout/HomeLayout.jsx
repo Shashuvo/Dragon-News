@@ -18,7 +18,7 @@ const HomeLayout = () => {
             <nav className="w-full md:w-11/12 mx-auto mt-2 md:mt-5">
                 <Navbar></Navbar>
             </nav>
-            <main className="w-full md:w-11/12 mx-auto mt-2 md:mt-5 md:grid md:grid-cols-12">
+            <main className="w-full md:w-11/12 mx-auto mt-2 md:mt-5 md:grid md:grid-cols-12 gap-5">
                 <aside className="md:col-span-3">
                     <LeftAside></LeftAside>
                 </aside>
