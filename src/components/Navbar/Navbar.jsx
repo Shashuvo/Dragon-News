@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
 import user from "../../assets/user.png"
-import "./Navbar.css"
 
 const Navbar = () => {
     const links = <>
