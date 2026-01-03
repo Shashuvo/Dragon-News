@@ -1,7 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 
 const CategoryNews = () => {
+    const data = useLoaderData();
+    console.log(data);
     const { id } = useParams();
     return (
         <div>
