@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaRegBookmark, FaShareAlt, FaStar, FaRegEye } from "react-icons/fa";
 
 const formatDate = (isoOrDateString) => {
@@ -19,7 +19,6 @@ const renderStars = (ratingNumber = 0) => {
 };
 
 const NewsCard = ({ news }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
 
     const {
         title,
@@ -30,6 +29,8 @@ const NewsCard = ({ news }) => {
         total_view,
     } = news || {};
 
+    const excerpt =
+        details?.length > 140 ? details.slice(0, 140) + "..." : details;
 
     return (
         <div className="card bg-base-100 border-3 border-base-300 rounded-xl ">
@@ -74,15 +75,14 @@ const NewsCard = ({ news }) => {
                 </figure>
 
                 <p className="mt-4 text-secondary leading-relaxed">
-                    {isExpanded ? details : details.slice(0, 160) + "..."}
+                    {excerpt}
                 </p>
 
 
                 <button
-                    onClick={() => setIsExpanded(!isExpanded)}
                     className="mt-2 text-orange-500 font-semibold hover:underline"
                 >
-                    {isExpanded ? "Read Less" : "Read More"}
+                    Read More
                 </button>
 
 
