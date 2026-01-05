@@ -3,7 +3,7 @@ import React from 'react';
 const SocialLogin = () => {
     return (
         <div>
-            <h1 className='font-semibold text-md md:text-xl pl-5 md:pl-0'>Login With</h1>
+            <h1 className='font-semibold mt-3 md:mt-0 text-md md:text-xl pl-5 md:pl-0'>Login With</h1>
             <div className='w-full flex flex-col gap-3 mt-3 md:mt-7'>
                 {/* <!-- Google --> */}
                 <button className="btn w-11/12 mx-auto md:w-full shadow-none btn-outline bg-white text-black border-primary hover:bg-secondary">
