@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Login = () => {
     return (
         <div className='flex justify-center min-h-screen items-center'>
-            <div className='card bg-base-100 w-10/12 md:w-full shrink-0 p-8 md:p-16 shadow-2xl'>
+            <div className='card bg-base-100 w-11/12 md:w-full shrink-0 p-8 md:p-16 shadow-2xl'>
                 <h1 className='text-2xl md:text-4xl font-semibold text-center text-primary'>Login Your Account!</h1>
                 <div className="divider my-6 md:my-10"></div>
                 <div className='card-body'>
