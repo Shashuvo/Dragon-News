@@ -1,23 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Login = () => {
     return (
+        <div className='flex justify-center min-h-screen items-center'>
+            <div className='card bg-base-100 w-10/12 md:w-full shrink-0 p-8 md:p-16 shadow-2xl'>
+                <h1 className='text-2xl md:text-4xl font-semibold text-center text-primary'>Login Your Account!</h1>
+                <div className="divider my-6 md:my-10"></div>
+                <div className='card-body'>
+                    <form className='fieldset'>
+                        <label className="label font-bold text-lg md:text-xl text-primary">Email address</label>
+                        <input type="email" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your email address" />
+                        <label className="label font-bold text-lg md:text-xl text-primary">Password</label>
+                        <input type="password" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your password" />
+                        <div><a className="link link-hover font-bold text-md md:text-lg text-primary">Forgot password?</a></div>
+                        <button className="btn btn-primary text-white my-4">Login</button>
+                        <p className='text-center font-bold text-md md:text-lg text-primary'>Dont’t Have An Account?
+                            <Link to="/auth/register" className='text-base-200 hover:underline'> Register</Link></p>
+                    </form>
+                </div>
 
-        <div className="card bg-base-100 w-10/12 md:w-8/12 mx-auto mt-12 md:mt-16 shrink-0 shadow-2xl">
-            <h1 className="text-4xl font-semibold text-center py-12">Login your account!</h1>
-            <div className="divider pb-8 w-10/12 mx-auto"></div>
-            <div className="card-body w-10/12 mx-auto pb-12">
-                <fieldset className="fieldset w-full">
-                    <label className="label w-full">Email</label>
-                    <input type="email" className="input" placeholder="Email" />
-                    <label className="label">Password</label>
-                    <input type="password" className="input" placeholder="Password" />
-                    <div><a className="link link-hover">Forgot password?</a></div>
-                    <button className="btn btn-neutral mt-4">Login</button>
-                </fieldset>
             </div>
         </div>
-
     );
 };
 
