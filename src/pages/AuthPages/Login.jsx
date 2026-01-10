@@ -10,9 +10,9 @@ const Login = () => {
                 <div className='card-body'>
                     <form className='fieldset'>
                         <label className="label font-bold text-lg md:text-xl text-primary">Email address</label>
-                        <input type="email" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your email address" />
+                        <input type="email" name='email' className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your email address" />
                         <label className="label font-bold text-lg md:text-xl text-primary">Password</label>
-                        <input type="password" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your password" />
+                        <input type="password" name='password' className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your password" />
                         <div><a className="link link-hover font-bold text-md md:text-lg text-primary">Forgot password?</a></div>
                         <button className="btn btn-primary text-white my-4">Login</button>
                         <p className='text-center font-bold text-md md:text-lg text-primary'>Dont’t Have An Account?
