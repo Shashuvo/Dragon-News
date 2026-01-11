@@ -36,5 +36,17 @@ export const router = createBrowserRouter([
                 Component: Register
             }
         ]
+    },
+    {
+        path: "/about",
+        element: <h1>About</h1>
+    },
+    {
+        path: "/career",
+        element: <h1>Career</h1>
+    },
+    {
+        path: "/*",
+        element: <h1>Erro404</h1>
     }
 ]);
