@@ -4,9 +4,14 @@ import userIcon from "../../assets/user.png"
 import { AuthContext } from '../../contexts/AuthContext';
 
 const Navbar = () => {
-    const { user } = use(AuthContext);
+    const { user, logOut } = use(AuthContext);
     const handleLogout = () => {
         console.log("user logged out");
+        logOut().then(() => {
+            alert("logged out successfully")
+        }).catch((error) => {
+            console.log(error);
+        });
     }
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
