@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
-import user from "../../assets/user.png"
+import userIcon from "../../assets/user.png"
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Navbar = () => {
+    const { user } = use(AuthContext);
+    const handleLogout = () => {
+        console.log("user logged out");
+    }
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
@@ -11,6 +16,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar-start">
+                <div>{user && user.email}</div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -28,8 +34,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                <img src={user} alt="User Image" />
-                <Link to="/auth/login" className="btn btn-primary text-white md:text-xl font-semibold py-2 px-11">Login</Link>
+                <img src={userIcon} alt="User Image" />
+                {
+                    user ? (<button onClick={handleLogout} className="btn btn-primary bg-white text-black border-black md:text-xl font-semibold py-2 px-11">Logout</button>)
+                        : (<Link to="/auth/login" className="btn btn-primary text-white md:text-xl font-semibold py-2 px-11">Login</Link>)
+                }
             </div>
         </div>
     );
