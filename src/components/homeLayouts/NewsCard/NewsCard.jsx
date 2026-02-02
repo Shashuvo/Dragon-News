@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegBookmark, FaShareAlt, FaStar, FaRegEye } from "react-icons/fa";
+import { Link } from "react-router";
 
 const formatDate = (isoOrDateString) => {
     if (!isoOrDateString) return "";
@@ -21,6 +22,7 @@ const renderStars = (ratingNumber = 0) => {
 const NewsCard = ({ news }) => {
 
     const {
+        id,
         title,
         details,
         author,
@@ -79,11 +81,11 @@ const NewsCard = ({ news }) => {
                 </p>
 
 
-                <button
+                <Link to={`/news-details/${id}`}
                     className="mt-2 text-orange-500 font-semibold hover:underline"
                 >
                     Read More
-                </button>
+                </Link>
 
 
                 <div className="divider my-4" />

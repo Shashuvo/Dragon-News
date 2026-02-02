@@ -5,6 +5,7 @@ import CategoryNews from "../pages/CategoryNews"
 import AuthLayout from "../layouts/AuthLayout/AuthLayout"
 import Login from "../pages/AuthPages/Login"
 import Register from "../pages/AuthPages/Register"
+import NewsDetails from "../pages/NewsDetails"
 
 
 export const router = createBrowserRouter([
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
     {
         path: "/career",
         element: <h1>Career</h1>
+    },
+    {
+        path: "/news-details/:id",
+        Component: NewsDetails,
     },
     {
         path: "/*",
