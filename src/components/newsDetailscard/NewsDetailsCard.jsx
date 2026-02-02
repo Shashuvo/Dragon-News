@@ -35,7 +35,7 @@ const NewsDetailsCard = ({ news }) => {
 
             {/* Content */}
             <div className="p-7 space-y-3">
-                <h2 className="text-2xl text-primary font-bold leading-snug line-clamp-2">
+                <h2 className="text-lg md:text-2xl text-primary font-bold leading-snug">
                     {title}
                 </h2>
 

@@ -24,7 +24,9 @@ const NewsDetails = () => {
             <main className="w-full md:w-11/12 mx-auto mt-2 md:mt-5 md:grid md:grid-cols-12 gap-5">
                 <section className="main md:col-span-9">
                     <h1 className='font-semibold mt-3 md:mt-0 text-md md:text-xl pl-5 md:pl-0'>News Details</h1>
-                    <NewsDetailsCard news={news}></NewsDetailsCard>
+                    <div className='px-3 md:px-0'>
+                        <NewsDetailsCard news={news}></NewsDetailsCard>
+                    </div>
                 </section>
                 <aside className="md:col-span-3 md:sticky md:top-2 md:h-fit">
                     <RightAside></RightAside>
