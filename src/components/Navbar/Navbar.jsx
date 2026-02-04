@@ -39,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                <img src={userIcon} alt="User Image" />
+                <img className='w-12 h-12 rounded-full' src={`${user ? user.photoURL : userIcon}`} alt="User Image" />
                 {
                     user ? (<button onClick={handleLogout} className="btn btn-primary bg-white text-black border-black md:text-xl font-semibold py-2 px-11">Logout</button>)
                         : (<Link to="/auth/login" className="btn btn-primary text-white md:text-xl font-semibold py-2 px-11">Login</Link>)

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
-    const { createUser, setUser } = use(AuthContext);
+    const { createUser, setUser, updatedUser } = use(AuthContext);
     const [nameError, setNameError] = useState("");
     const [passError, setPassError] = useState("");
     const handleRegister = e => {
@@ -32,7 +32,12 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                setUser(user);
+                updatedUser({ displayName: name, photoURL: photo }).then(() => {
+                    setUser({ ...user, displayName: name, photoURL: photo });
+                }).catch((error) => {
+                    console.log(error);
+                    setUser(user);
+                });
             })
             .catch((error) => {
                 const errorMessage = error.message;
