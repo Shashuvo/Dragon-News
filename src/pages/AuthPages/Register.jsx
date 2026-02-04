@@ -1,16 +1,32 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
     const { createUser, setUser } = use(AuthContext);
+    const [nameError, setNameError] = useState("");
+    const [passError, setPassError] = useState("");
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
+        if (name.length < 5) {
+            setNameError("Name should be at least 5 character.")
+            return;
+        }
+        else {
+            setNameError("");
+        }
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        if (password.length < 6) {
+            setPassError("Password should be at least 6 character.")
+            return;
+        }
+        else {
+            setPassError("");
+        }
         console.log(name, photo);
 
         createUser(email, password)
@@ -32,12 +48,14 @@ const Register = () => {
                     <fieldset className='fieldset'>
                         <label className="label font-bold text-lg md:text-xl text-primary">Your Name</label>
                         <input required type="text" name="name" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your name" />
+                        {nameError && <p className='text-sm text-error'>{nameError}</p>}
                         <label className="label font-bold text-lg md:text-xl text-primary">Photo URL</label>
                         <input required type="url" name="photo" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your Photo URL" />
                         <label className="label font-bold text-lg md:text-xl text-primary">Email address</label>
                         <input required type="email" name="email" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your email address" />
                         <label className="label font-bold text-lg md:text-xl text-primary">Password</label>
                         <input required type="password" name="password" className="input w-full mb-3 text-secondary bg-base-300" placeholder="Enter your password" />
+                        {passError && <p className='text-sm text-error'>{passError}</p>}
                         <label className='label text-xs md:text-[16px]'>
                             <input required type="checkbox" name="terms" className="checkbox" />Accept <span className='font-semibold'>terms & conditions</span>
                         </label>
