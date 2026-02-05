@@ -22,7 +22,11 @@ export const router = createBrowserRouter([
             {
                 path: "/categories/:id",
                 Component: CategoryNews,
-                loader: () => fetch("/news.json"),
+                loader: async () => {
+                    const res = await fetch("/news.json");
+                    const data = await res.json();
+                    return data;
+                },
                 hydrateFallbackElement: <Loading></Loading>
             }
         ]
@@ -54,7 +58,11 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
             <NewsDetails></NewsDetails>
         </PrivateRoute>,
-        loader: () => fetch("/news.json"),
+        loader: async () => {
+            const res = await fetch("/news.json");
+            const data = await res.json();
+            return data;
+        },
         hydrateFallbackElement: <Loading></Loading>
     },
     {
